@@ -77,8 +77,6 @@ var activityHandler = function(event) {
 	
 	// fire!
 	timedOutCopy.each(function(e){
-		console.log('Firing return ' + e);
-		console.log({idleTime: idleTime, timer: e});
 		element.fire('idle:return', {idleTime: idleTime, timer: e});
 	});
 	
@@ -97,8 +95,6 @@ var timeOutHandler = function(timeout) {
 	element = this;
 	if (element.timedOut.indexOf(timeout) == -1 ) {
 		element.timedOut.push(timeout);
-		console.log('Firing timeout ' + timeout);
-		console.log({timer: timeout});
 		element.fire('idle:timeout', {timer: timeout});
 	}
 };
